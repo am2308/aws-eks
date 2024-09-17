@@ -1,1 +1,3 @@
-test
+env=""
+region=""
+vpc_cidr=""
