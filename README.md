@@ -1,4 +1,4 @@
-# Terraform Multienv EKS
+# EKS
 
 This repository contains Infrastructure as Code (IaC) for setting up a production-ready EKS cluster in multiple environments, using Terraform.
 
