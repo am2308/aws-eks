@@ -56,12 +56,12 @@ resource "aws_iam_role_policy_attachment" "eks-nodes-AmazonEC2ContainerRegistryR
   role       = aws_iam_role.eks_nodes_role.name
 }
 
-resource "aws_iam_role_policy_attachment" "additional" {
-  for_each = { for k, v in var.iam_role_additional_policies : k => v }
+#resource "aws_iam_role_policy_attachment" "additional" {
+#  for_each = { for k, v in var.iam_role_additional_policies : k => v }
 
-  policy_arn = each.value
-  role       = aws_iam_role.eks_nodes_role.name
-}
+#  policy_arn = each.value
+#  role       = aws_iam_role.eks_nodes_role.name
+#}
 
 resource "aws_iam_policy" "sns_publish_policy" {
   name_prefix = "${var.project}-${var.env}-sns-publish-policy"
