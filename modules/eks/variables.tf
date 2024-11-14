@@ -47,6 +47,6 @@ variable "cluster_addons" {
 }
 
 # attach additional policies to the node group role
-variable "iam_role_additional_policies" {
-  type = list(string)
-}
+#variable "iam_role_additional_policies" {
+#  type = list(string)
+#}
