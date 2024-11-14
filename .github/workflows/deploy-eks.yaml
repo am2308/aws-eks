@@ -37,6 +37,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: plan-test-${{ github.sha }}.out
+          path: plan-test-${{ github.sha }}.out
           if-no-files-found: error
 
   Deploy-approval:
@@ -76,7 +77,7 @@ jobs:
       - name: Download plan out
         uses: actions/download-artifact@v3
         with:
-          name: plan-test-${{ github.sha }}.out
+          name: plan-test-${{ github.sha }}.out 
 
       #- name: Copy Plan
       #  run: |
