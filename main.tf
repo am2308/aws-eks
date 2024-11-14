@@ -33,7 +33,6 @@ module "eks" {
   node_groups_config           = var.node_groups_config
   key_pair_name                = var.key_pair_name
   node_volume_size             = var.node_volume_size
-  iam_role_additional_policies = var.iam_role_additional_policies
 }
 
 
