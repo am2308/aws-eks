@@ -2,9 +2,9 @@ name: Provision EKS
 
 on:
   workflow_dispatch:
-  #push:
-    #branches:
-      #- feature/demo  # or the branch you want to trigger the workflow
+  push:
+    branches:
+      - main  # or the branch you want to trigger the workflow
 
 jobs:
   Deploy-plan:
@@ -83,7 +83,7 @@ jobs:
         run: |
           cp plan-test-${{ github.sha }}.out terraform/
 
-      - name: Terraform Apply - Dev
-        run: |
-          terraform apply -auto-approve -input=false -var-file="vars/test/test.tfvars"
-        working-directory: terraform/
+      #- name: Terraform Apply - Dev
+      #  run: |
+      #    terraform apply -auto-approve -input=false -var-file="vars/test/test.tfvars"
+      #  working-directory: terraform/
