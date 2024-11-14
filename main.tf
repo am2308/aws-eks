@@ -27,8 +27,8 @@ module "eks" {
   project = var.project
   env     = var.env
   subnet_ids = [
-    subnet-0ed63c4fe1d0e90bf,
-    subnet-065229372f5a26920
+    "subnet-0ed63c4fe1d0e90bf",
+    "subnet-065229372f5a26920"
   ]
   node_groups_config = var.node_groups_config
   key_pair_name      = var.key_pair_name
