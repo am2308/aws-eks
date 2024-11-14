@@ -6,21 +6,24 @@
 #}
 variable "project" {
   type = string
+  default = "demo"
 }
 variable "env" {
   type = string
+  default = "test"
 }
 variable "region" {
   type = string
+  default = "ap-south-1"
 }
 variable "node_groups_config" {
-  default = ""
+  default = "2"
 }
-#variable "key_pair_name" {
-#  default = ""
-#}
+variable "key_pair_name" {
+  default = "assignment"
+}
 variable "node_volume_size" {
-  default = ""
+  default = "30"
 }
 #variable "iam_role_additional_policies" {
 #  type = list(string)
