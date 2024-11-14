@@ -37,7 +37,6 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: plan-test-${{ github.sha }}.out
-          path: terraform/plan-test-${{ github.sha }}.out
           if-no-files-found: error
 
   Deploy-approval:
@@ -79,9 +78,9 @@ jobs:
         with:
           name: plan-test-${{ github.sha }}.out
 
-      - name: Copy Plan
-        run: |
-          cp plan-test-${{ github.sha }}.out terraform/
+      #- name: Copy Plan
+      #  run: |
+      #    cp plan-test-${{ github.sha }}.out terraform/
 
       #- name: Terraform Apply - Dev
       #  run: |
