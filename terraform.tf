@@ -8,6 +8,6 @@ erraform {
     }
   }
   backend "s3" {
-    acl     = "bucket-owner-full-control"
+    acl = "bucket-owner-full-control"
   }
 }

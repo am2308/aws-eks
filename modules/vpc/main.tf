@@ -72,7 +72,7 @@ resource "aws_subnet" "private-subnet-2" {
 
 resource "aws_route_table" "public-route-table" {
   vpc_id = aws_vpc.vpc-1.id
-  tags   = {
+  tags = {
     Name        = "${var.project}-${var.env}-public-route-table"
     environment = var.env
     project     = var.project
@@ -82,7 +82,7 @@ resource "aws_route_table" "public-route-table" {
 
 resource "aws_route_table" "private-route-table" {
   vpc_id = aws_vpc.vpc-1.id
-  tags   = {
+  tags = {
     Name        = "${var.project}-${var.env}-private-route-table"
     environment = var.env
     project     = var.project
@@ -149,7 +149,7 @@ resource "aws_route" "nat-gw-route" {
 
 resource "aws_internet_gateway" "internet-gateway" {
   vpc_id = aws_vpc.vpc-1.id
-  tags   = {
+  tags = {
     Name        = "${var.project}-${var.env}-internet-gateway"
     environment = var.env
     project     = var.project

@@ -43,8 +43,8 @@ resource "aws_alb" "alb-1" {
   }
 
   tags = {
-    Name                       = "${var.project}-${var.env}-alb-1"
-    "environment"              = var.env
+    Name          = "${var.project}-${var.env}-alb-1"
+    "environment" = var.env
     # add tags for alb-ingress auto discovery
     "ingress.k8s.aws/resource" = "LoadBalancer"
     "ingress.k8s.aws/stack"    = var.env
@@ -57,7 +57,7 @@ resource "aws_lb" "nlb-1" {
   load_balancer_type = "network"
   internal           = false
   subnets            = var.subnet_ids
-  tags               = {
+  tags = {
     Name        = "${var.project}-${var.env}-nlb-1"
     Environment = var.env
   }
@@ -157,10 +157,10 @@ resource "aws_alb_listener" "http-listener" {
 resource "aws_lb_target_group_attachment" "tg_attachment_80" {
   target_group_arn = aws_lb_target_group.tg-80.arn
   # attach the ALB to this target group
-  target_id        = aws_alb.alb-1.arn
+  target_id = aws_alb.alb-1.arn
   #  If the target type is alb, the targeted Application Load Balancer must have at least one listener whose port matches the target group port.
-  port             = 80
-  depends_on       = [aws_alb_listener.http-listener]
+  port       = 80
+  depends_on = [aws_alb_listener.http-listener]
 }
 
 resource "aws_lb_target_group_attachment" "tg_attachment_443" {

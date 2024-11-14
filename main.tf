@@ -9,7 +9,7 @@
 #  public_subnet_2_cidr  = var.public_subnet_2_cidr
 #  vpc_cidr              = var.vpc_cidr
 
-  # needed for shared load balancer integration
+# needed for shared load balancer integration
 #  eks_cluster_name = "${var.project}-${var.env}-eks-1"
 #}
 
@@ -24,15 +24,15 @@
 module "eks" {
   source = "./modules/eks"
 
-  project    = var.project
-  env        = var.env
+  project = var.project
+  env     = var.env
   subnet_ids = [
     subnet-0ed63c4fe1d0e90bf,
     subnet-065229372f5a26920
   ]
-  node_groups_config           = var.node_groups_config
-  key_pair_name                = var.key_pair_name
-  node_volume_size             = var.node_volume_size
+  node_groups_config = var.node_groups_config
+  key_pair_name      = var.key_pair_name
+  node_volume_size   = var.node_volume_size
 }
 
 

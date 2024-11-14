@@ -1,5 +1,5 @@
 data "aws_eks_addon_version" "this" {
-  for_each = {for k, v in var.cluster_addons : k => v}
+  for_each = { for k, v in var.cluster_addons : k => v }
 
   addon_name         = try(each.value.name, each.key)
   kubernetes_version = aws_eks_cluster.eks_cluster.version

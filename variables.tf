@@ -5,15 +5,15 @@
 #  type = list(string)
 #}
 variable "project" {
-  type = string
+  type    = string
   default = "demo"
 }
 variable "env" {
-  type = string
+  type    = string
   default = "test"
 }
 variable "region" {
-  type = string
+  type    = string
   default = "ap-south-1"
 }
 variable "node_groups_config" {

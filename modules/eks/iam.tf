@@ -29,8 +29,8 @@ resource "aws_iam_role" "eks_nodes_role" {
   assume_role_policy = jsonencode({
     Statement = [
       {
-        Action    = "sts:AssumeRole"
-        Effect    = "Allow"
+        Action = "sts:AssumeRole"
+        Effect = "Allow"
         Principal = {
           Service = "ec2.amazonaws.com"
         }
@@ -70,9 +70,9 @@ resource "aws_iam_policy" "sns_publish_policy" {
     Version = "2012-10-17"
     Statement = [
       {
-        Sid = "${var.project}${var.env}SNSPublishPolicy"
-        Effect = "Allow"
-        Action = "sns:Publish"
+        Sid      = "${var.project}${var.env}SNSPublishPolicy"
+        Effect   = "Allow"
+        Action   = "sns:Publish"
         Resource = "arn:aws:sns:${var.region}:319469791318:${var.env}-*"
       }
     ]
