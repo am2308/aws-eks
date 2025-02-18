@@ -34,7 +34,7 @@ jobs:
         run: terraform plan --var-file="vars/test/test.tfvars" -out=plan-test-${{ github.sha }}.out
 
       - name: Publish TF plan artifact 
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: plan-test-${{ github.sha }}.out
           path: plan-test-${{ github.sha }}.out
